@@ -1,0 +1,147 @@
+/* ==========================================================================
+   SKILLS.CSS — Styles khusus untuk skills.html
+   ========================================================================== */
+
+.skills-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+/* ---------- Skill bars ---------- */
+.skill-category {
+  margin-bottom: 44px;
+}
+
+.skill-category-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue-500);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-category-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--blue-grid);
+}
+
+.skill-bar-item {
+  margin-bottom: 22px;
+}
+
+.skill-bar-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.skill-bar-head .skill-name {
+  font-weight: 600;
+  color: var(--blue-900);
+}
+
+.skill-bar-head .skill-percent {
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.skill-bar-track {
+  width: 100%;
+  height: 8px;
+  background: var(--blue-100);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue-700), var(--blue-500));
+  border-radius: 999px;
+  width: 0%;
+  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Tool chips grid ---------- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.tool-chip {
+  background: var(--white);
+  border: 1px solid var(--blue-grid);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  text-align: center;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.tool-chip:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue-500);
+  box-shadow: 0 14px 28px rgba(10,37,64,0.08);
+}
+
+.tool-chip .tool-icon {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-100);
+  border-radius: 9px;
+  color: var(--blue-700);
+}
+
+.tool-chip .tool-icon svg { width: 20px; height: 20px; }
+
+.tool-chip span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* ---------- Soft skills tags ---------- */
+.soft-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.soft-tag {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.soft-tag:hover {
+  background: var(--blue-700);
+  color: var(--white);
+}
+
+@media (max-width: 860px) {
+  .skills-intro { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .tools-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+}

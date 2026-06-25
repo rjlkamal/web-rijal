@@ -1,0 +1,167 @@
+/* ==========================================================================
+   CONTACT.CSS — Styles khusus untuk contact.html
+   ========================================================================== */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 48px;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  border: 1px solid var(--blue-grid);
+  border-radius: var(--radius);
+  background: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.channel-card:hover {
+  transform: translateX(6px);
+  box-shadow: 0 14px 28px rgba(10,37,64,0.08);
+  border-color: var(--blue-500);
+}
+
+.channel-card .ch-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: var(--blue-100);
+  color: var(--blue-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.channel-card .ch-icon svg { width: 24px; height: 24px; }
+
+.channel-card .ch-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.channel-card .ch-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue-500);
+  margin-bottom: 3px;
+}
+
+.channel-card .ch-value {
+  font-weight: 600;
+  color: var(--blue-900);
+  font-size: 0.98rem;
+  word-break: break-word;
+}
+
+.channel-card .ch-arrow {
+  color: var(--blue-grid);
+  transition: transform var(--transition), color var(--transition);
+  flex-shrink: 0;
+}
+
+.channel-card:hover .ch-arrow {
+  transform: translateX(4px);
+  color: var(--blue-500);
+}
+
+/* ---------- Contact form ---------- */
+.contact-form-wrap {
+  background: var(--blue-100);
+  border-radius: 16px;
+  padding: 36px;
+}
+
+.contact-form-wrap h3 {
+  margin-bottom: 6px;
+  font-size: 1.25rem;
+}
+
+.contact-form-wrap .form-sub {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 26px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue-900);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--blue-grid);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  background: var(--white);
+  color: var(--ink);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px rgba(29,111,201,0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-submit-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+#formStatus {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: none;
+}
+
+#formStatus.success {
+  display: block;
+  background: #e3f6ec;
+  color: #1b7a47;
+}
+
+@media (max-width: 860px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 28px 22px; }
+}

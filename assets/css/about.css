@@ -1,0 +1,164 @@
+/* ==========================================================================
+   ABOUT.CSS — Styles khusus untuk about.html
+   ========================================================================== */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-photo-frame {
+  position: relative;
+  border: 1.5px solid var(--blue-grid);
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--blue-100);
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-photo-frame .blueprint-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 37, 64, 0.82);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.04em;
+}
+
+.about-text h1 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  margin-bottom: 18px;
+}
+
+.about-text p {
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.about-text p strong { color: var(--blue-700); }
+
+/* Bio detail list */
+.bio-facts {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.bio-fact {
+  border-left: 2px solid var(--blue-500);
+  padding-left: 14px;
+}
+
+.bio-fact .fact-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue-500);
+  margin-bottom: 4px;
+}
+
+.bio-fact .fact-value {
+  font-weight: 600;
+  color: var(--blue-900);
+  font-size: 0.95rem;
+}
+
+/* ---------- Timeline / Journey ---------- */
+.timeline {
+  position: relative;
+  margin-top: 20px;
+  padding-left: 28px;
+  border-left: 2px solid var(--blue-grid);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.timeline-item:last-child { padding-bottom: 0; }
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2.5px solid var(--blue-500);
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--blue-500);
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.timeline-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.timeline-item p {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 540px;
+}
+
+/* ---------- Values / Principles grid ---------- */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.value-card {
+  padding: 26px 22px;
+  border-radius: var(--radius);
+  background: var(--blue-100);
+  transition: transform var(--transition);
+}
+
+.value-card:hover { transform: translateY(-5px); }
+
+.value-card .v-mark {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--blue-500);
+  margin-bottom: 10px;
+}
+
+.value-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.value-card p { color: var(--ink-soft); font-size: 0.9rem; }
+
+@media (max-width: 860px) {
+  .about-hero { grid-template-columns: 1fr; }
+  .about-photo-frame { max-width: 320px; margin: 0 auto; }
+  .bio-facts { grid-template-columns: 1fr 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .bio-facts { grid-template-columns: 1fr; }
+}
